@@ -3,7 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AppComponent } from './app.component';
+import { AppService } from './app.service';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterializeModule } from "angular2-materialize";
+
+import 'hammerjs';
+import { DetallesComponent } from './detalles/detalles.component';
 
 
 
@@ -18,15 +26,21 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireDatabaseModule,
+    MaterialModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    MaterializeModule,
+
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

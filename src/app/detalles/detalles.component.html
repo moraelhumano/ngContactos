@@ -1,0 +1,14 @@
+<div class="" *ngIf="contacto">
+    <p>
+        Detalles del contacto
+    </p>
+
+    <p>
+        nombre: {{contacto.nombre}} <br>
+        email: {{contacto.email}} <br>
+        apellido: {{contacto.apellidos}} <br>
+
+    </p>
+
+    <button type="button" name="button" (click)="onCerrar()">Borrar</button>
+</div>
