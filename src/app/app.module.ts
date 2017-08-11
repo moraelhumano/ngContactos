@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterializeModule } from "angular2-materialize";
+
 
 import 'hammerjs';
 import { DetallesComponent } from './detalles/detalles.component';
@@ -37,7 +37,7 @@ export const firebaseConfig = {
     MaterialModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    MaterializeModule,
+
 
   ],
   providers: [AppService],

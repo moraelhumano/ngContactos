@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AppService } from './app.service';
-import { MaterializeModule } from "angular2-materialize";
+
 
 @Component({
   selector: 'app-root',
