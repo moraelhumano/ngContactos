@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -10,8 +10,12 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterializeModule } from "angular2-materialize";
 
+
+
+
 import 'hammerjs';
 import { DetallesComponent } from './detalles/detalles.component';
+import { EditarComponent } from './editar/editar.component';
 
 
 
@@ -27,11 +31,12 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    DetallesComponent
+    DetallesComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AngularFireDatabaseModule,
     MaterialModule,
