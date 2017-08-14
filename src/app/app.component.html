@@ -30,6 +30,7 @@
                 <td>{{contacto.email}}</td>
                 <td>{{contacto.direccion}}</td>
                 <td><button (click)="onClick(contacto)">Mostrar</button></td>
+                <td><button type="button" md-button (click)="onEditar(contacto)" color="accent" name="button">Editar</button></td>
             </tr>
         </tbody>
     </table>
@@ -37,3 +38,5 @@
 </md-card>
 
 <app-detalles [contacto]="contacto" (cerrar)="cerrarDetalles()"></app-detalles>
+
+<app-editar [contacto]="contactoEditar" (cerrar)="cerrarEdicion()"></app-editar>

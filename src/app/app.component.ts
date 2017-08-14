@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   contactos:any[];
   ciudades = ['CDMX', 'GDL', 'MTRey'];
   contacto = null;
-
+  contactoEditar = null;
 
   constructor(private servicio: AppService){ }
 
@@ -22,9 +22,6 @@ export class AppComponent implements OnInit {
         .subscribe(contactos => this.contactos = contactos)
   }
 
-  onClick(contacto){
-      this.contacto = contacto;
-  }
 
   onSelect(event){
       let query = null;
@@ -43,7 +40,21 @@ export class AppComponent implements OnInit {
 
   }
 
+  onClick(contacto){
+      this.contacto = contacto;
+  }
+  
   cerrarDetalles(){
       this.contacto = null;
   }
+
+  onEditar(contacto){
+      this.contactoEditar = contacto;
+  }
+
+  cerrarEdicion(){
+      this.contactoEditar = null;
+  }
+
+
 }
