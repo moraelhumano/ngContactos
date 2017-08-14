@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { DetallesComponent } from './detalles/detalles.component';
 import { EditarComponent } from './editar/editar.component';
+import { EliminarComponent } from './eliminar/eliminar.component';
+import { AgregarComponent } from './agregar/agregar.component';
 
 
 
@@ -32,7 +34,12 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     DetallesComponent,
-    EditarComponent
+    EditarComponent,
+    EliminarComponent,
+    AgregarComponent
+  ],
+  entryComponents:[
+      EliminarComponent
   ],
   imports: [
     BrowserModule,

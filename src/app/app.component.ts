@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AppService } from './app.service';
+import { EliminarComponent } from './eliminar/eliminar.component'
+import { MdDialog } from '@angular/material'
 
 
 @Component({
@@ -11,11 +13,16 @@ import { AppService } from './app.service';
 export class AppComponent implements OnInit {
   title = 'Contactos';
   contactos:any[];
-  ciudades = ['CDMX', 'GDL', 'MTRey'];
+  ciudades = ['CDMX', 'GDL', 'MTRey', 'Todos'];
   contacto = null;
   contactoEditar = null;
+  contactoAgregar = false;
 
-  constructor(private servicio: AppService){ }
+  constructor(
+      private servicio: AppService,
+      private dialog: MdDialog,
+
+  ){}
 
   ngOnInit(){
       this.servicio.getContactos()
@@ -43,7 +50,7 @@ export class AppComponent implements OnInit {
   onClick(contacto){
       this.contacto = contacto;
   }
-  
+
   cerrarDetalles(){
       this.contacto = null;
   }
@@ -56,5 +63,19 @@ export class AppComponent implements OnInit {
       this.contactoEditar = null;
   }
 
+  onEliminar(contacto){
+      let dialogRef = this.dialog.open(EliminarComponent, {
+          disableClose:true
+      });
+      dialogRef.afterClosed().subscribe(estado => {
+          if(estado){
+              this.servicio.removeContacto(contacto.$key);
+          }
+      })
+  }
+
+  onAgregar(){
+      this.contactoAgregar = true;
+  }
 
 }

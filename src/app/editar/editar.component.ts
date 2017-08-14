@@ -21,7 +21,6 @@ export class EditarComponent implements OnInit {
                 email:valor.email,
                 empresa:valor.empresa
             });
-
         }
     }
 
@@ -33,9 +32,7 @@ export class EditarComponent implements OnInit {
   constructor(
       private service: AppService,
       private fb: FormBuilder
-  ) {
-
-   }
+  ) { }
 
   ngOnInit() {
       this.crearFormulario();
@@ -60,6 +57,5 @@ export class EditarComponent implements OnInit {
   onCancelar(){
       this.contactoOriginal = null;
       this.cerrar.emit();
-
   }
 }

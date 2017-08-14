@@ -29,4 +29,12 @@ export class AppService {
    updateContacto(key, contacto){
        this.contactos.update(key, contacto);
    }
+
+   removeContacto(key){
+       this.contactos.remove(key);
+   }
+
+   addContacto(contacto){
+       this.contactos.push(contacto)
+   }
 }
