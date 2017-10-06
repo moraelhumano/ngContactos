@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
   onEditar(contacto){
       this.contactoEditar = contacto;
   }
-
+ 
   cerrarEdicion(){
       this.contactoEditar = null;
   }

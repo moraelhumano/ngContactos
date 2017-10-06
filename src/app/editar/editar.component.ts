@@ -57,5 +57,6 @@ export class EditarComponent implements OnInit {
   onCancelar(){
       this.contactoOriginal = null;
       this.cerrar.emit();
+      alert("Ese men")
   }
 }
